@@ -11,6 +11,7 @@
             position: relative;
         }
 
+        /* BACKGROUND HALAMAN UTAMA */
         body::before {
             content: "";
             position: fixed;
@@ -19,9 +20,11 @@
             background-image: url('https://i.postimg.cc/GpJ6mp59/images-(2).jpg'); 
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             opacity: 0.35; 
         }
         
+        /* HEADER */
         header { 
             background: linear-gradient(rgba(0, 74, 153, 0.7), rgba(0, 74, 153, 0.7)), 
                         url('https://i.postimg.cc/43ZmbDdh/1776953571300.png');
@@ -34,12 +37,20 @@
             border-bottom: 5px solid #ffeb3b;
         }
         
+        .header-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            text-align: left;
+            text-shadow: 3px 3px 6px rgba(0,0,0,1);
+        }
         #jam-digital {
             font-family: 'Courier New', Courier, monospace;
             font-size: 45px; 
             font-weight: bold;
             color: #ffeb3b;
-            text-shadow: 3px 3px 6px rgba(0,0,0,1);
+            display: block;
+            letter-spacing: 3px;
         }
 
         .header-content { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -49,41 +60,47 @@
         .running-text { 
             background-color: #ffeb3b; color: #ff0000; padding: 5px 0; 
             font-weight: 900; font-size: 28px; border-bottom: 2px solid #004a99;
-            font-style: italic;
+            z-index: 10; position: relative; font-family: 'Georgia', serif; font-style: italic;
         }
 
         .container { 
             width: 94%; max-width: 900px; margin: 30px auto; 
-            background: rgba(255, 255, 255, 0.85); 
-            padding: 30px; border-radius: 20px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.75); padding: 30px; border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
         
-        .section-title { border-bottom: 3px solid #004a99; display: inline-block; margin-bottom: 20px; padding-bottom: 5px; color: #004a99; }
+        .section-title { border-bottom: 3px solid #004a99; display: inline-block; margin-bottom: 20px; padding-bottom: 5px; }
 
-        /* STYLE FORM & HASIL ULASAN */
+        /* TABEL SPAREPART */
+        .table-container { overflow-x: auto; border-radius: 12px; margin-top: 15px; }
+        table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.5); }
+        th { background: #004a99; color: white; padding: 18px; }
+        td { padding: 15px; border: 1px solid rgba(0,0,0,0.1); font-weight: bold; }
+
+        /* FORM ULASAN */
         .review-section {
-            background: #fff; padding: 25px; border-radius: 15px;
-            border: 2px solid #004a99; margin-top: 20px;
+            background: rgba(249, 249, 249, 0.9); padding: 25px; border-radius: 15px;
+            border-left: 8px solid #004a99; margin-top: 30px;
         }
         .review-section input, .review-section textarea, .review-section select {
-            width: 100%; padding: 12px; margin: 10px 0;
-            border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box;
+            width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;
         }
-        .btn-submit {
+        .btn-submit-review {
             background: #004a99; color: white; padding: 15px; border: none;
             border-radius: 8px; width: 100%; font-size: 18px; font-weight: bold; cursor: pointer;
         }
 
-        /* DAFTAR ULASAN YANG MUNCUL */
-        #daftar-ulasan { margin-top: 20px; }
-        .ulasan-item {
-            background: #f1f1f1; padding: 15px; border-radius: 10px;
-            margin-bottom: 10px; border-left: 5px solid #ffeb3b;
+        /* TAMPILAN HASIL ULASAN */
+        .display-reviews { margin-top: 30px; }
+        .review-card {
+            background: white; padding: 15px; border-radius: 10px;
+            margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #ffeb3b;
         }
-        .ulasan-nama { font-weight: bold; color: #004a99; margin-bottom: 5px; }
-        .ulasan-bintang { color: #f39c12; margin-bottom: 5px; }
+        .review-card strong { color: #004a99; font-size: 18px; }
+        .review-stars { color: #f1c40f; margin: 5px 0; font-size: 18px; }
+        .review-text { font-style: italic; color: #555; }
 
         .footer { text-align: center; padding: 50px; color: #fff; background: rgba(0, 0, 0, 0.9); }
     </style>
@@ -95,47 +112,67 @@
         <img src="https://i.postimg.cc/43ZmbDdh/1776953571300.png" class="logo-header">
         <h1>𝒔𝒉𝒂𝒖𝒒𝒊 𝒄𝒆𝒍𝒍</h1>
     </div>
-    <div id="jam-digital">00 : 00 : 00 WITA</div>
+    <p style="font-size: 22px; font-weight: bold;">Spesialis Service HP & Elektro Service KDI</p>
+    <div class="header-info">
+        <div id="jam-digital">00 : 00 : 00 WITA</div>
+    </div>
 </header>
 
 <div class="running-text">
-    <marquee scrollamount="12">SHAUQI CELL - SPESIALIS SERVICE HP & ELEKTRONIK - HUB: 087840957071 - BERGARANSI</marquee>
+    <marquee scrollamount="12">SHAUQI CELL MENERIMA JASA SERVICE HAND PHONE DAN ELEKTRONIK LAINNYA - HUBUNGI : 087840957071 - BERGARANSI</marquee>
 </div>
 
 <div class="container">
     <section>
-        <h2 class="section-title">📍 Lokasi Kami</h2>
-        <p>Desa Langgea, Kec. Ranomeeto, Sulawesi Tenggara</p>
+        <h2 class="section-title">📦 Daftar Sparepart & Status</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th>Nama Barang</th><th>Target</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>LCD Berbagai Merk</td><td>All Device</td><td style="color:green">Ready</td></tr>
+                    <tr><td>Baterai Original</td><td>All Device</td><td style="color:green">Ready</td></tr>
+                    <tr><td>Hardware/IC Repair</td><td>Hardware</td><td style="color:green">Ready</td></tr>
+                    <tr><td>Flash/Software</td><td>Software</td><td style="color:green">Ready</td></tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
-    <hr>
-
     <section id="ulasan">
-        <h2 class="section-title">⭐ Berikan Penilaian</h2>
+        <h2 class="section-title">⭐ Berikan Penilaian & Ulasan</h2>
         <div class="review-section">
             <form id="formUlasan" action="https://formspree.io/f/xdayjkez" method="POST">
-                <input type="text" id="inputNama" name="Nama" placeholder="Nama Akun / Nama Lengkap" required>
-                <input type="email" name="Email" placeholder="Email Anda" required>
+                <input type="text" name="Nama_Pelanggan" id="nama" placeholder="Nama Lengkap / Nama Akun" required>
+                <input type="email" name="Email_Pelanggan" placeholder="Alamat Email Anda" required>
                 
-                <select id="inputBintang" name="Bintang">
+                <label style="font-weight: bold;">Penilaian Bintang:</label>
+                <select name="Bintang" id="bintang">
                     <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (Sangat Puas)</option>
                     <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (Puas)</option>
                     <option value="⭐⭐⭐">⭐⭐⭐ (Cukup)</option>
+                    <option value="⭐⭐">⭐⭐ (Kurang)</option>
+                    <option value="⭐">⭐ (Buruk)</option>
                 </select>
                 
-                <textarea id="inputPesan" name="Pesan" rows="3" placeholder="Tulis ulasan Anda..." required></textarea>
-                <button type="submit" class="btn-submit">Kirim & Tampilkan Ulasan</button>
+                <textarea name="Pesan_Ulasan" id="pesan" rows="4" placeholder="Tulis ulasan Anda di sini..." required></textarea>
+                
+                <button type="submit" class="btn-submit-review">Kirim Ulasan</button>
             </form>
         </div>
 
-        <h3 style="margin-top: 30px;">💬 Ulasan Pelanggan Terbaru:</h3>
-        <div id="daftar-ulasan">
-            </div>
+        <div class="display-reviews">
+            <h3 class="section-title">💬 Ulasan Pelanggan Terbaru</h3>
+            <div id="listUlasan">
+                </div>
+        </div>
     </section>
 </div>
 
 <div class="footer">
-    <p><strong>𝒔𝒉𝒂𝒖𝒒𝒊 𝒄𝒆𝒍𝒍</strong> © 2026</p>
+    <p><strong>𝒔𝒉𝒂𝒖𝒒𝒊 𝒄𝒆𝒍𝒍</strong></p>
+    <p>Desa Langgea, Kec. Ranomeeto, Kab. Konawe Selatan</p>
 </div>
 
 <script>
@@ -149,41 +186,42 @@
     setInterval(updateJam, 1000);
     updateJam();
 
-    // FUNGSI MENAMPILKAN ULASAN SECARA REAL-TIME
+    // FUNGSI MENAMPILKAN ULASAN
     const form = document.getElementById('formUlasan');
-    const wadahUlasan = document.getElementById('daftar-ulasan');
+    const listUlasan = document.getElementById('listUlasan');
 
-    // Ambil ulasan dari penyimpanan lokal jika ada
-    let ulasanSimpanan = JSON.parse(localStorage.getItem('dataUlasan')) || [];
-
-    function tampilkanUlasan() {
-        wadahUlasan.innerHTML = '';
-        ulasanSimpanan.forEach((item) => {
-            const div = document.createElement('div');
-            div.className = 'ulasan-item';
-            div.innerHTML = `
-                <div class="ulasan-nama">👤 ${item.nama}</div>
-                <div class="ulasan-bintang">${item.bintang}</div>
-                <div class="ulasan-teks">"${item.pesan}"</div>
-            `;
-            wadahUlasan.prepend(div); // Munculkan yang terbaru di atas
+    // Ambil data dari storage saat halaman dibuka
+    window.onload = function() {
+        const savedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+        savedReviews.forEach(review => {
+            tambahUlasanKeLayar(review.nama, review.bintang, review.pesan);
         });
-    }
+    };
 
-    form.addEventListener('submit', function() {
-        const nama = document.getElementById('inputNama').value;
-        const bintang = document.getElementById('inputBintang').value;
-        const pesan = document.getElementById('inputPesan').value;
+    form.onsubmit = function() {
+        const namaVal = document.getElementById('nama').value;
+        const bintangVal = document.getElementById('bintang').value;
+        const pesanVal = document.getElementById('pesan').value;
 
-        const ulasanBaru = { nama, bintang, pesan };
-        ulasanSimpanan.push(ulasanBaru);
-        localStorage.setItem('dataUlasan', JSON.stringify(ulasanSimpanan));
+        // Simpan ke LocalStorage
+        const currentReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+        currentReviews.push({ nama: namaVal, bintang: bintangVal, pesan: pesanVal });
+        localStorage.setItem('reviews', JSON.stringify(currentReviews));
         
-        // Form akan tetap mengirim data ke Formspree (email Anda)
-    });
+        // Tampilkan langsung (opsional sebelum page reload)
+        tambahUlasanKeLayar(namaVal, bintangVal, pesanVal);
+    };
 
-    // Jalankan saat halaman dibuka
-    tampilkanUlasan();
+    function tambahUlasanKeLayar(n, b, p) {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.innerHTML = `
+            <strong>👤 ${n}</strong>
+            <div class="review-stars">${b}</div>
+            <p class="review-text">"${p}"</p>
+        `;
+        listUlasan.prepend(card); // Menambahkan ke paling atas
+    }
 </script>
 
 </body>
