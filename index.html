@@ -24,7 +24,7 @@
             opacity: 0.35; 
         }
         
-        /* HEADER */
+        /* HEADER DENGAN BACKGROUND LOGO */
         header { 
             background: linear-gradient(rgba(0, 74, 153, 0.7), rgba(0, 74, 153, 0.7)), 
                         url('https://i.postimg.cc/43ZmbDdh/1776953571300.png');
@@ -37,6 +37,7 @@
             border-bottom: 5px solid #ffeb3b;
         }
         
+        /* JAM DIGITAL BESAR */
         .header-info {
             position: absolute;
             bottom: 20px;
@@ -52,55 +53,93 @@
             display: block;
             letter-spacing: 3px;
         }
+        #info-cuaca {
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 5px;
+        }
 
         .header-content { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .logo-header { width: 110px; height: 110px; border-radius: 15px; border: 4px solid #fff; background: #fff; }
         header h1 { margin: 0; font-size: 55px; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); color: #ffeb3b; }
 
+        /* TULISAN BERJALAN */
         .running-text { 
-            background-color: #ffeb3b; color: #ff0000; padding: 5px 0; 
-            font-weight: 900; font-size: 28px; border-bottom: 2px solid #004a99;
-            z-index: 10; position: relative; font-family: 'Georgia', serif; font-style: italic;
+            background-color: #ffeb3b; 
+            color: #ff0000; 
+            padding: 5px 0; 
+            font-weight: 900; 
+            font-size: 28px; 
+            border-bottom: 2px solid #004a99;
+            z-index: 10;
+            position: relative;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+
+        .sub-promo {
+            text-align: center;
+            color: #ffeb3b;
+            font-size: 32px; 
+            font-weight: bold;
+            font-style: italic;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,1);
+            margin: 15px 0;
+            padding: 0 10px;
+            text-transform: uppercase;
         }
 
         .container { 
             width: 94%; max-width: 900px; margin: 30px auto; 
-            background: rgba(255, 255, 255, 0.75); padding: 30px; border-radius: 20px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.75); 
+            padding: 30px; border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.4);
         }
         
-        .section-title { border-bottom: 3px solid #004a99; display: inline-block; margin-bottom: 20px; padding-bottom: 5px; }
+        .section-title { border-bottom: 3px solid #004a99; display: inline-block; margin-bottom: 20px; padding-bottom: 5px; color: #004a99; }
 
-        /* TABEL SPAREPART */
+        /* TABEL SPAREPART LENGKAP */
         .table-container { overflow-x: auto; border-radius: 12px; margin-top: 15px; }
         table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.5); }
-        th { background: #004a99; color: white; padding: 18px; }
-        td { padding: 15px; border: 1px solid rgba(0,0,0,0.1); font-weight: bold; }
+        th { background: #004a99; color: white; padding: 18px; font-size: 18px; }
+        td { padding: 15px; border: 1px solid rgba(0,0,0,0.1); font-weight: bold; font-size: 16px; }
+        .status-ready { color: #1b5e20; text-align: center; }
+
+        /* VIDEO & MAPS */
+        .media-box { position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 20px; margin: 25px 0; overflow: hidden; border: 3px solid #fff; }
+        .media-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        /* GALERI */
+        .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; border: 3px solid #fff; }
+
+        /* TOMBOL WA */
+        .btn-wa { background: #25d366; color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin: 20px 0; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
         /* FORM ULASAN */
         .review-section {
-            background: rgba(249, 249, 249, 0.9); padding: 25px; border-radius: 15px;
-            border-left: 8px solid #004a99; margin-top: 30px;
+            background: rgba(249, 249, 249, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 8px solid #004a99;
+            margin-top: 30px;
         }
         .review-section input, .review-section textarea, .review-section select {
             width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;
         }
         .btn-submit-review {
-            background: #004a99; color: white; padding: 15px; border: none;
-            border-radius: 8px; width: 100%; font-size: 18px; font-weight: bold; cursor: pointer;
+            background: #004a99; color: white; padding: 15px; border: none; border-radius: 8px; width: 100%; font-size: 18px; font-weight: bold; cursor: pointer;
         }
 
-        /* TAMPILAN HASIL ULASAN */
-        .display-reviews { margin-top: 30px; }
+        /* DISPLAY ULASAN */
         .review-card {
-            background: white; padding: 15px; border-radius: 10px;
-            margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-left: 5px solid #ffeb3b;
+            background: white; padding: 15px; border-radius: 10px; margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 5px solid #ffeb3b;
         }
-        .review-card strong { color: #004a99; font-size: 18px; }
-        .review-stars { color: #f1c40f; margin: 5px 0; font-size: 18px; }
-        .review-text { font-style: italic; color: #555; }
 
         .footer { text-align: center; padding: 50px; color: #fff; background: rgba(0, 0, 0, 0.9); }
     </style>
@@ -113,14 +152,18 @@
         <h1>𝒔𝒉𝒂𝒖𝒒𝒊 𝒄𝒆𝒍𝒍</h1>
     </div>
     <p style="font-size: 22px; font-weight: bold;">Spesialis Service HP & Elektro Service KDI</p>
+    
     <div class="header-info">
         <div id="jam-digital">00 : 00 : 00 WITA</div>
+        <div id="info-cuaca">Cerah Berawan</div>
     </div>
 </header>
 
 <div class="running-text">
-    <marquee scrollamount="12">SHAUQI CELL MENERIMA JASA SERVICE HAND PHONE DAN ELEKTRONIK LAINNYA - HUBUNGI : 087840957071 - BERGARANSI</marquee>
+    <marquee scrollamount="12">SHAUQI CELL MENERIMA JASA SERVICE HAND PHONE DAN ELEKTRONIK LAINNYA, HUBUNGI : 087840957071 - KUALITAS TERJAMIN DAN BERGARANSI - الحمد لله جزاكم الله خira      </marquee>
 </div>
+
+<div class="sub-promo">Menerima Jasa Service Handphone dan Elektronik Lainnya</div>
 
 <div class="container">
     <section>
@@ -128,15 +171,44 @@
         <div class="table-container">
             <table>
                 <thead>
-                    <tr><th>Nama Barang</th><th>Target</th><th>Status</th></tr>
+                    <tr><th>Nama Barang / Jasa</th><th>Target</th><th>Status</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>LCD Berbagai Merk</td><td>All Device</td><td style="color:green">Ready</td></tr>
-                    <tr><td>Baterai Original</td><td>All Device</td><td style="color:green">Ready</td></tr>
-                    <tr><td>Hardware/IC Repair</td><td>Hardware</td><td style="color:green">Ready</td></tr>
-                    <tr><td>Flash/Software</td><td>Software</td><td style="color:green">Ready</td></tr>
+                    <tr><td>LCD Berbagai Merk</td><td>All Device</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>Tombol On/Off & Volume</td><td>All Device</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>Baterai Original</td><td>All Device</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>Papan Cas / USB Port</td><td>All Device</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>Flexible Mainboard</td><td>All Device</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>IC Power / RF / CPU</td><td>Hardware</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>Ganti Kamera / Speaker</td><td>Hardware</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>Flash Firmware / Software</td><td>Software</td><td class="status-ready">✔ Ready</td></tr>
                 </tbody>
             </table>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">📍 Lokasi & Kontak</h2>
+        <p style="font-size: 18px; font-weight: bold;">Desa Langgea, Kec. Ranomeeto, Kab. Konawe Selatan, Sulawesi Tenggara</p>
+        <div class="media-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.882414840889!2d122.450!3d-4.040!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNCsMDInNDguMCJTIDEyMsKwMjcnMDAuMCJF!5e0!3m2!1sid!2sid!4v1714000000000"></iframe>
+        </div>
+        <a href="https://wa.me/6287840957071" class="btn-wa">📲 Chat WhatsApp: 087840957071</a>
+    </section>
+
+    <section>
+        <h2 class="section-title">🎥 Video Dokumentasi</h2>
+        <div class="media-box">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">📷 Galeri Shauqi Cell</h2>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="https://i.postimg.cc/43ZmbDdh/1776953571300.png"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/GpJ6mp59/images-(2).jpg"></div>
+            <div class="gallery-item"><img src="https://via.placeholder.com/400/004a99/FFFFFF?text=Service+HP"></div>
         </div>
     </section>
 
@@ -147,7 +219,6 @@
                 <input type="text" name="Nama_Pelanggan" id="nama" placeholder="Nama Lengkap / Nama Akun" required>
                 <input type="email" name="Email_Pelanggan" placeholder="Alamat Email Anda" required>
                 
-                <label style="font-weight: bold;">Penilaian Bintang:</label>
                 <select name="Bintang" id="bintang">
                     <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (Sangat Puas)</option>
                     <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (Puas)</option>
@@ -157,26 +228,22 @@
                 </select>
                 
                 <textarea name="Pesan_Ulasan" id="pesan" rows="4" placeholder="Tulis ulasan Anda di sini..." required></textarea>
-                
                 <button type="submit" class="btn-submit-review">Kirim Ulasan</button>
             </form>
         </div>
 
-        <div class="display-reviews">
-            <h3 class="section-title">💬 Ulasan Pelanggan Terbaru</h3>
-            <div id="listUlasan">
-                </div>
-        </div>
+        <div id="listUlasan" style="margin-top: 20px;">
+            <h3 style="color:#004a99">💬 Ulasan Pelanggan:</h3>
+            </div>
     </section>
 </div>
 
 <div class="footer">
     <p><strong>𝒔𝒉𝒂𝒖𝒒𝒊 𝒄𝒆𝒍𝒍</strong></p>
-    <p>Desa Langgea, Kec. Ranomeeto, Kab. Konawe Selatan</p>
+    <p>Desa Langgea, Kec. Ranomeeto, Kab. Konawe Selatan, Sulawesi Tenggara</p>
 </div>
 
 <script>
-    // FUNGSI JAM DIGITAL
     function updateJam() {
         const skr = new Date();
         const opsi = { timeZone: 'Asia/Makassar', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
@@ -186,41 +253,31 @@
     setInterval(updateJam, 1000);
     updateJam();
 
-    // FUNGSI MENAMPILKAN ULASAN
+    // Logika Simpan & Tampilkan Ulasan
     const form = document.getElementById('formUlasan');
     const listUlasan = document.getElementById('listUlasan');
 
-    // Ambil data dari storage saat halaman dibuka
     window.onload = function() {
-        const savedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
-        savedReviews.forEach(review => {
-            tambahUlasanKeLayar(review.nama, review.bintang, review.pesan);
-        });
+        const saved = JSON.parse(localStorage.getItem('reviews_shauqi')) || [];
+        saved.forEach(r => tambahKeLayar(r.n, r.b, r.p));
     };
 
     form.onsubmit = function() {
-        const namaVal = document.getElementById('nama').value;
-        const bintangVal = document.getElementById('bintang').value;
-        const pesanVal = document.getElementById('pesan').value;
+        const n = document.getElementById('nama').value;
+        const b = document.getElementById('bintang').value;
+        const p = document.getElementById('pesan').value;
 
-        // Simpan ke LocalStorage
-        const currentReviews = JSON.parse(localStorage.getItem('reviews')) || [];
-        currentReviews.push({ nama: namaVal, bintang: bintangVal, pesan: pesanVal });
-        localStorage.setItem('reviews', JSON.stringify(currentReviews));
-        
-        // Tampilkan langsung (opsional sebelum page reload)
-        tambahUlasanKeLayar(namaVal, bintangVal, pesanVal);
+        const saved = JSON.parse(localStorage.getItem('reviews_shauqi')) || [];
+        saved.push({ n, b, p });
+        localStorage.setItem('reviews_shauqi', JSON.stringify(saved));
+        tambahKeLayar(n, b, p);
     };
 
-    function tambahUlasanKeLayar(n, b, p) {
-        const card = document.createElement('div');
-        card.className = 'review-card';
-        card.innerHTML = `
-            <strong>👤 ${n}</strong>
-            <div class="review-stars">${b}</div>
-            <p class="review-text">"${p}"</p>
-        `;
-        listUlasan.prepend(card); // Menambahkan ke paling atas
+    function tambahKeLayar(n, b, p) {
+        const div = document.createElement('div');
+        div.className = 'review-card';
+        div.innerHTML = `<strong>👤 ${n}</strong><div style="color:#f1c40f">${b}</div><p>"${p}"</p>`;
+        listUlasan.appendChild(div);
     }
 </script>
 
