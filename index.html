@@ -107,7 +107,7 @@
         table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.5); }
         th { background: #004a99; color: white; padding: 18px; font-size: 18px; }
         td { padding: 15px; border: 1px solid rgba(0,0,0,0.1); font-weight: bold; font-size: 16px; }
-        .status-ready { color: #1b5e20; text-align: center; }
+        .status-ready { color: #1b5e20; text-align: center; font-size: 24px; }
 
         /* VIDEO & MAPS */
         .media-box { position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 20px; margin: 25px 0; overflow: hidden; border: 3px solid #fff; }
@@ -160,7 +160,7 @@
 </header>
 
 <div class="running-text">
-    <marquee scrollamount="12">SHAUQI CELL MENERIMA JASA SERVICE HAND PHONE DAN ELEKTRONIK LAINNYA, HUBUNGI : 087840957071 - KUALITAS TERJAMIN DAN BERGARANSI - الحمد لله جزاكم الله خira      </marquee>
+    <marquee scrollamount="12">SHAUQI CELL MENERIMA JASA SERVICE HAND PHONE DAN ELEKTRONIK LAINNYA, HUBUNGI : 087840957071 - KUALITAS TERJAMIN DAN BERGARANSI - الحمد لله جزاكم الله خيرا      </marquee>
 </div>
 
 <div class="sub-promo">Menerima Jasa Service Handphone dan Elektronik Lainnya</div>
@@ -174,15 +174,15 @@
                     <tr><th>Nama Barang / Jasa</th><th>Target</th><th>Status</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>LCD Berbagai Merk</td><td>All Device</td><td class="status-ready">Ready</td></tr>
-                    <tr><td>Tombol On/Off & Volume</td><td>All Device</td><td class="status-ready">Ready</td></tr>
-                    <tr><td>Baterai Original</td><td>All Device</td><td class="status-ready">Ready</td></tr>
-                    <tr><td>Papan Cas / USB Port</td><td>All Device</td><td class="status-ready">Ready</td></tr>
-                    <tr><td>Flexible Mainboard</td><td>All Device</td><td class="status-ready">Ready</td></tr>
-                    <tr><td>IC Power / RF / CPU</td><td>Hardware</td><td class="status-ready">Ready</td></tr>
-                    <tr><td>Ganti Kamera / Speaker</td><td>Hardware</td><td class="status-ready">Ready</td></tr>
-                    <tr><td>Flash Firmware / Software</td><td>Software</td><td class="status-ready">√ Ready</td></tr>
-                    <tr><td>dll</td><td>Lainnya</td><td class="status-ready">Ready</td></tr>
+                    <tr><td>LCD Berbagai Merk</td><td>All Device</td><td class="status-ready">√</td></tr>
+                    <tr><td>Tombol On/Off & Volume</td><td>All Device</td><td class="status-ready">√</td></tr>
+                    <tr><td>Baterai Original</td><td>All Device</td><td class="status-ready">√</td></tr>
+                    <tr><td>Papan Cas / USB Port</td><td>All Device</td><td class="status-ready">√</td></tr>
+                    <tr><td>Flexible Mainboard</td><td>All Device</td><td class="status-ready">√</td></tr>
+                    <tr><td>IC Power / RF / CPU</td><td>Hardware</td><td class="status-ready">√</td></tr>
+                    <tr><td>Ganti Kamera / Speaker</td><td>Hardware</td><td class="status-ready">√</td></tr>
+                    <tr><td>Flash Firmware / Software</td><td>Software</td><td class="status-ready">√</td></tr>
+                    <tr><td>dll</td><td>Lainnya</td><td class="status-ready">√</td></tr>
                 </tbody>
             </table>
         </div>
@@ -192,7 +192,7 @@
         <h2 class="section-title">📍 Lokasi & Kontak</h2>
         <p style="font-size: 18px; font-weight: bold;">Desa Langgea, Kec. Ranomeeto, Kab. Konawe Selatan, Sulawesi Tenggara</p>
         <div class="media-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.882414840889!2d122.450!3d-4.040!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNCsMDInNDguMCJTIDEyMsKwMjcnMDAuMCJF!5e0!3m2!1sid!2sid!4v1714000000000"></iframe>
+            <iframe src="https://maps.google.com/maps?q=-4.037145,122.493922&t=k&z=19&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
         <a href="https://wa.me/6287840957071" class="btn-wa">📲 Chat WhatsApp: 087840957071</a>
     </section>
@@ -200,7 +200,7 @@
     <section>
         <h2 class="section-title">🎥 Video Dokumentasi</h2>
         <div class="media-box">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=PL" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/LIVE_VIDEO_ID" allowfullscreen></iframe>
         </div>
     </section>
 
@@ -235,7 +235,7 @@
 
         <div id="listUlasan" style="margin-top: 20px;">
             <h3 style="color:#004a99">💬 Ulasan Pelanggan:</h3>
-            </div>
+        </div>
     </section>
 </div>
 
@@ -254,7 +254,6 @@
     setInterval(updateJam, 1000);
     updateJam();
 
-    // Logika Simpan & Tampilkan Ulasan
     const form = document.getElementById('formUlasan');
     const listUlasan = document.getElementById('listUlasan');
 
