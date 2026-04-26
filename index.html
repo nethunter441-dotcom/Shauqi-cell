@@ -11,7 +11,7 @@
             position: relative;
         }
 
-        /* BACKGROUND HALAMAN UTAMA */
+        /* BACKGROUND HALAMAN UTAMA - OPACITY DITAMBAH */
         body::before {
             content: "";
             position: fixed;
@@ -21,7 +21,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.35; 
+            opacity: 0.55; 
         }
         
         /* HEADER DENGAN BACKGROUND LOGO */
@@ -71,40 +71,6 @@
         .header-content { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .logo-header { width: 110px; height: 110px; border-radius: 15px; border: 4px solid #fff; background: #fff; }
         header h1 { margin: 0; font-size: 55px; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); color: #ffeb3b; }
-
-        /* JAM ANALOG */
-        .analog-clock {
-            width: 140px;
-            height: 140px;
-            border: 12px solid #ffeb3b;
-            border-radius: 50%;
-            position: relative;
-            background: rgba(0,0,0,0.6);
-            box-shadow: 0 0 20px rgba(255,235,59,0.8);
-            margin: 10px;
-        }
-        .analog-clock::after {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: #ffeb3b;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-        }
-        .hand {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: 50% 100%;
-            border-radius: 4px;
-        }
-        #hour-hand { width: 6px; height: 40px; background: #fff; transform: translateX(-50%) rotate(90deg); }
-        #minute-hand { width: 4px; height: 55px; background: #fff; transform: translateX(-50%) rotate(90deg); }
-        #second-hand { width: 2px; height: 60px; background: #ff0000; transform: translateX(-50%) rotate(90deg); }
 
         /* TULISAN BERJALAN */
         .running-text { 
@@ -224,6 +190,9 @@
             transform: scale(1.05);
         }
 
+        /* TOMBOL WA */
+        .btn-wa { background: #25d366; color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin: 10px 0; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
         /* FORM ULASAN */
         .review-section {
             background: rgba(249, 249, 249, 0.9);
@@ -270,13 +239,6 @@
                 </svg>
             </div>
         </div>
-    </div>
-
-    <!-- Jam Analog Keren -->
-    <div class="analog-clock">
-        <div class="hand" id="hour-hand"></div>
-        <div class="hand" id="minute-hand"></div>
-        <div class="hand" id="second-hand"></div>
     </div>
 </header>
 
@@ -326,7 +288,7 @@
             <iframe src="https://www.youtube.com/embed/videoseries?list=PL..." allowfullscreen></iframe>
         </div>
         
-        <!-- Kotak Video Channel YouTube Baru -->
+        <!-- Kotak Video Channel YouTube -->
         <h3 style="color:#004a99; margin-top:30px;">🎬 Klimbing Electro Channel - Video Service & Tips</h3>
         <div class="media-box">
             <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCYOURCHANNELID" allowfullscreen></iframe>
@@ -334,6 +296,12 @@
         <a href="https://youtube.com/@klimbing.electro.channel" target="_blank" class="btn-youtube">
             📺 Kunjungi Channel YouTube Saya
         </a>
+
+        <!-- Video Upload Spesifik yang kamu minta -->
+        <h3 style="color:#004a99; margin-top:40px;">🎬 Video Service Terbaru</h3>
+        <div class="media-box">
+            <iframe src="https://www.youtube.com/embed/0uX7I6ARmu4" allowfullscreen></iframe>
+        </div>
     </section>
 
     <section id="gallery">
@@ -392,24 +360,6 @@
     }
     setInterval(updateJam, 1000);
     updateJam();
-
-    // JAM ANALOG
-    function setAnalogClock() {
-        const now = new Date();
-        const seconds = now.getSeconds();
-        const minutes = now.getMinutes();
-        const hours = now.getHours() % 12;
-
-        const secondDeg = ((seconds / 60) * 360) + 90;
-        const minuteDeg = ((minutes / 60) * 360) + 90;
-        const hourDeg = ((hours / 12) * 360) + 90;
-
-        document.getElementById("second-hand").style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
-        document.getElementById("minute-hand").style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
-        document.getElementById("hour-hand").style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
-    }
-    setInterval(setAnalogClock, 1000);
-    setAnalogClock();
 
     // LIGHTBOX GALERI
     function openLightbox(img) {
